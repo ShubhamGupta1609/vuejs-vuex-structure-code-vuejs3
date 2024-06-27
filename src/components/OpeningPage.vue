@@ -6,8 +6,8 @@
 
         <main>
             <div class="login-container">
-                <h1>Login</h1>
-                <form @submit.prevent="login()">
+                <h1>Login</h1> {{ getUserDetails }}
+                <form @submit.prevent="login">
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" v-model="email" required>
@@ -28,15 +28,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
-const email = ref('')
-const password = ref('')
+const email = ref('');
+const password = ref('');
+
+const store = useStore();
 
 const login = () => {
     // Your login logic here
-    alert(`Email: ${email.value}, Password: ${password.value}`)
-}
+    alert(`Email: ${email.value}, Password: ${password.value}`);
+    store.dispatch("fetchUserDetails", { email: email.value, password: password.value })
+};
+
+const getUserDetails = computed(() => store.getters.getUserDetails);
 
 </script>
 
