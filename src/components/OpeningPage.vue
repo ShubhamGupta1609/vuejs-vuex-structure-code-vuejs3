@@ -6,7 +6,11 @@
 
         <main>
             <div class="login-container">
-                <h1>Login</h1> {{ getUserDetails }}
+                <h1>Login</h1>
+                <h4 style="color: blue;cursor: pointer;">DashBoard</h4>
+                <a href="/dashboard" target="_blank" rel="noopener">DashBoard</a>
+                <router-link to="/dashboard">Home</router-link>
+                 {{ getUserDetails }}
                 <form @submit.prevent="login">
                     <div class="form-group">
                         <label for="email">Email:</label>

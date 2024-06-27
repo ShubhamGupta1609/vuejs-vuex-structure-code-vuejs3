@@ -1,18 +1,20 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <OpeningPage/>
+  <!-- <OpeningPage/> -->
+   <DashBoard/>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import OpeningPage from './components/OpeningPage.vue'
+// import OpeningPage from './components/OpeningPage.vue'
+import DashBoard from './components/DashBoard.vue';
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    OpeningPage
+    DashBoard
   }
 }
 </script>
